@@ -61,7 +61,7 @@
 //     .finally(() => console.log('finished!')); // "finished";
 
 //! Methods Of Promise  
-// https://jsonplaceholder.typicode.com/users
+
 
 //! Promise.all
 // const makePromise = (text, delay) => {

@@ -1,3 +1,5 @@
+//! це об'єкт, який є в системі в одному екземплярі
+
 class Database {
   constructor(data) {
     if (Database.exists) {
