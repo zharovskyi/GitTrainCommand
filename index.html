@@ -22,12 +22,59 @@
     <p>Commit 4</p>
     <p>Commit 3</p>
     <p>Commit 5</p>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
-    <script src="main.js"></script> -->
+    <div>
+        <button onclick="runScript()">Run script</button>
+        <script>
+            function runScript() {
+                console.log("script","1");
+
+                setTimeout(function () {
+                console.log("script set Tim", 2);
+                }, 2000);
+                const promise = new Promise(function (resolve, reject) {
+                    return resolve("Promise");
+                })
+                console.log(promise.then(data=>console.log(data)));
+
+                // console.log("3");image.png
+
+                // const a = () => {
+                // return new Promise(
+                //     (resolve, reject) => 
+                //     // resolve("text")
+                //     setTimeout(() => resolve("script promise"), 1000)
+                // );
+                // };
+                // a().then((res) => console.log(res));
+
+                // setTimeout(function () {
+                // console.log("script set Tim", 5);
+                // }, 3000);
+            }
+            function consoleLog(){
+                console.log('Console log')
+            }
+        </script>
+<!-- // 1
+// 7
+// 6
+// p
+// 4
+// 2
+// 5 -->
+        <button onclick="consoleLog()">Console log</button>
+    </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script> -->
+    <!-- <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script> -->
+    <!-- <script src="main.js"></script> -->
     <!-- <script src="objectMethod.js"></script> -->
-    <!-- <script src="function.js"></script>
-    <script src="event.js"></script> -->
-    <!-- <script src="promise.js"></script> -->
+    <!-- <script src="InteviewTasks.js"></script> -->
+    <!-- <script src="destruction.js"></script> -->
+    <!-- <script src="regexp.js"></script> -->
+
+    <!-- <script src="function.js"></script> -->
+    <!-- <script src="event.js"></script> -->
+    <script src="promise.js"></script> 
     <!-- <script src="proto.js"></script> -->
 
     <!--! Patterns   -->
@@ -54,7 +101,7 @@
     <!-- <script src="./behevioral/Iterator.js"></script> -->
     <!-- <script src="./behevioral/Visitor.js"></script> -->
     <!-- <script src="./behevioral/Observer.js"></script> -->
-<script src="./behevioral/State.js"></script>
+<!-- <script src="./behevioral/State.js"></script> -->
 
 
 </body>

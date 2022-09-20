@@ -1,5 +1,5 @@
 //! IF key not integer we get key the order of creation,|
-//! IF integer we get  the order of integer 
+//! IF integer we get  the order of integer
 // let obj = {
 //     // a : 1,
 //     // c : 3,
@@ -31,7 +31,7 @@
 // console.log('values :>> ', values);
 // console.log('entries :>> ', entries);
 
-//! Spread operator 
+//! Spread operator
 // const number = [7,4,5,1,5];
 // const min = Math.min(...number) // 1
 
@@ -44,7 +44,7 @@
 // const addNewLeeter = [...letters, 'A'];
 // console.log('addNewLeeter',addNewLeeter);
 
-//!Destructuring 
+//!Destructuring
 // let arr = ["John", "Smith",'Oleh', 'Pypkin']
 // let [firstName, surname,...rest] = arr;
 // console.log('firstName :>> ', firstName);
@@ -63,7 +63,7 @@
 //     }
 // };
 
-//! Object assign 
+//! Object assign
 // const cloneOfUser = Object.assign([],user)
 // const cloneOfUser = Object.assign({},user)
 
@@ -72,7 +72,7 @@
 // console.log('cloneOfUser :>> ', cloneOfUser.hobby.goal());
 // console.log('cloneOfUser :>> ', cloneOfUser);
 
-//! Spreed operator 
+//! Spreed operator
 // const a = {
 //     en: 'Bye',
 //     de: 'Tschüss'
@@ -82,9 +82,8 @@
 // console.log('a :>> ', a);
 // console.log('b :>> ', b);
 
-
 //!  Nested Objects, Deep Copy
-//! Method for deep Copy : 
+//! Method for deep Copy :
 //!       - JSON.parse(JSON.stringify(object)),
 //!       - _.cloneDeep(objects)(Lodash)
 // const a = {
@@ -93,16 +92,17 @@
 //       supper: 'meat',
 //       breakfast: ()=>1,
 //     }
-// }  
+// }
 // let b = {...a}
 // let b = {};
+// let b = a;
 // for (var key in a) {
 //     b[key] = a[key]
 // }
 // let b = JSON.parse(JSON.stringify(a)) //
 // let b = _.cloneDeep(a);
 // b.name = 'Potatoes';
-// console.log('a ', a==b);
+// console.log('a', a===b);
 // console.log('a ', a);
 // console.log('b ', b);
 
@@ -120,7 +120,6 @@
 // }
 // checkName(person);
 // console.log('person',person);
-
 
 // const serName = 'Romario';
 // const person = [
@@ -155,7 +154,7 @@
 // console.log('slice :>> ', clients.slice(1,3)); // ['Ajax', 'Poly'] - not include last element,return new Array
 // console.log('clients',clients);
 
-//Splice 
+//Splice
 //? splice(start)
 //? splice(start, deleteCount)
 //? splice(start, deleteCount, item1)
@@ -170,7 +169,7 @@
 // console.log('clients',clients); // [ 'Mango', 'Ajax','Orange', 'Poly', 'Kiwi']
 
 // Reduce arr.reduce(callback(accumulator, item, currentIndex, array),initialValue)
-// let arr = [3, 2, 3]; 
+// let arr = [3, 2, 3];
 // let result = arr.reduce((sum, current) => {
 //     return sum + current;
 // },0
@@ -180,30 +179,30 @@
 // const id = 234435;
 
 const users = [
-    {
-        username: "a",
-        salary: 10,
-        show: false,
-        country: 'UA'
-    },
-    {
-        username: "b",
-        salary: 20,
-        show: true,
-        country: 'US',
-    },
-    {
-        username: "c",
-        salary: 30,
-        show: false,
-        country: 'GB'
-    },
-    {
-        username: "d",
-        salary: 40,
-        show: true,
-        country: 'US',
-    },
+  {
+    username: "a",
+    salary: 10,
+    show: false,
+    country: "UA",
+  },
+  {
+    username: "b",
+    salary: 20,
+    show: true,
+    country: "US",
+  },
+  {
+    username: "c",
+    salary: 30,
+    show: false,
+    country: "GB",
+  },
+  {
+    username: "d",
+    salary: 40,
+    show: true,
+    country: "US",
+  },
 ];
 //! getAllShowTrue filter
 //  const getAllShowTrue = (users) => {
@@ -237,36 +236,30 @@ const users = [
 //           }
 //           return newArr;
 //     },[])
-   
+
 // }
 // console.log('totalUsersFrom :>> ', usersFrom(users));
-   
-// const points = {
-//     a: 2500,
-//     b: 150,
-//     c: 800,
-// };
-//! Added Additional Key
-// const additionalKey = users.reduce((newObj,user) => {
-//     const key = user.username;
-//     if(points[key]) {
-//         user.points = points[key];
-//     }else {
-//         user.points = 0; 
-//     }
-//     newObj[key] = user;
-//     return newObj;
-// },{})
-// console.log('additionalKey :>> ', additionalKey);
 
-// const flatten = (arr) => { 
-//     return arr.reduce((newArr,item) => {
-//         if(Array.isArray(item)) {
-//            newArr = [...newArr,...flatten(item)];
-//         }else {
-//             newArr = [...newArr,item]
-//         }
-//         return newArr;
-//     },[])
-// }
-// console.log('flatten:>> ', flatten([1, [1, 2, [3, [4]]], [2, 4]]));
+const points = {
+  a: 2500,
+  b: 150,
+  c: 800,
+};
+
+//! Added Additional Key
+const additionalKey = users.reduce((newObj, user) => {
+  // console.log("newObj ", newObj);
+  // console.log("user", user);
+  const key = user.username;
+  
+  if (points[key]) {
+    user.points = points[key];
+  } else {
+    user.points = 0;
+  }
+  // newObj[key] = user;
+  // console.log("key", newObj);
+  return newObj;
+}, {});
+console.log("additionalKey :>> ", additionalKey);
+
