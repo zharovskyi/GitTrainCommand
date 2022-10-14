@@ -1,14 +1,15 @@
 h1 {
-    font-size: 48px;
-    color: #333;
-    text-transform: uppercase;
-    margin-bottom: 300px;
+  font-size: 48px;
+  color: #333;
+  text-transform: uppercase;
+  margin-bottom: 300px;
 }
+
 section {
-    background-color: green;
-    position: relative;
-    width: 150px;
-    height: 150px;
-    text-align: center;
-    cursor: pointer;
-  }
+  background-color: green;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  cursor: pointer;
+}
