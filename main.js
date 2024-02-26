@@ -31,23 +31,23 @@ const postId = 2;
 //   .catch(error => console.log(new Error(error)));
 
 //   PATCH
-const postToUpdate = {
-    body: 'It is updated post',
-    content: 'It is updated post',
-    title: "Hello",
-    type: "beer"
-};
+// const postToUpdate = {
+//     body: 'It is updated post',
+//     content: 'It is updated post',
+//     title: "Hello",
+//     type: "beer"
+// };
 
-fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
-  method: 'PATCH',
-  body: JSON.stringify(postToUpdate),
-  headers: {
-    'Content-Type': 'application/json; charset=UTF-8',
-  },
-})
-  .then(response => response.json())
-  .then(post => console.log('postId PATCH',post))
-  .catch(error => console.log('ERROR' + error));
+// fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
+//   method: 'PATCH',
+//   body: JSON.stringify(postToUpdate),
+//   headers: {
+//     'Content-Type': 'application/json; charset=UTF-8',
+//   },
+// })
+//   .then(response => response.json())
+//   .then(post => console.log('postId PATCH',post))
+//   .catch(error => console.log('ERROR' + error));
 
 //   DELETE
 // const postIdDelete = 2;

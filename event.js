@@ -12,7 +12,7 @@
 // function scrollThree (event) {
 //     console.log('scrollThree',event)
 // }
-// //! Delete Necessary event  
+// //! Delete Necessary event
 // window.removeEventListener('scroll', scrollThree);
 // const eventPrDef = document.getElementById('eventPrDef');
 
@@ -25,44 +25,45 @@
 // }
 
 // ! Cupturing
-// const section = document.getElementById('section');
-// const div = document.getElementById('div');
-// const p = document.getElementById('p');
+const section = document.getElementById("section");
+const div = document.getElementById("div");
+const p = document.getElementById("p");
 
-// section.addEventListener('click', handleClickSection)
-// function handleClickSection (e) {
-//     console.log('section:>> ', e);
+section.addEventListener('click', handleClickSection)
+div.addEventListener('click', handleClickDiv)
+p.addEventListener('click', handleClickP)
 
-// }
+section.addEventListener(
+  "click",
+  (e) => {
+    console.log("section cupture");
+  },
+  true
+);
+div.addEventListener(
+  "click",
+  (e) => {
+    console.log("div cupture");
+  },
+  true
+);
+p.addEventListener(
+  "click",
+  (e) => {
+    console.log("p cupture");
+  },
+  true
+);
 
-// div.addEventListener('click', handleClickDiv)
-// function handleClickDiv (e) {
-//     console.log('div :>> ', e);
-// }
+function handleClickSection(e) {
+  console.log("section:>> ");
+}
 
-// p.addEventListener('click', handleClickP)
-// function handleClickP (e) {
-//     e.stopPropagation();
-//     console.log('p :>> ', e);
-// }
+function handleClickDiv(e) {
+  console.log("div :>> ");
+}
 
-
-
-
-
-
-
-// [1,2,3,4].forEach(function (i) {
-//     console.log('i :>> ', i);
-// })
-
-// // Asynchroniuses
-// function asyncForEach (array,cb) {
-//     array.forEach(function(){
-//         setTimeout(cb,0);
-//     })
-// }
-
-// asyncForEach([1,2,3,4],function(i) {
-//     console.log('async i :>> ', i);
-// })
+function handleClickP(e) {
+  // e.stopPropagation();
+  console.log("p :>> ");
+}

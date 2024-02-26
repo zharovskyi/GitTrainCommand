@@ -1,5 +1,4 @@
-//! Closure
-// let count =0;
+//! Closure - замикання дає вам доступ до зовнішньої функції з внутрішньої функції
 // function makeCounter() {
 //     let count =0;
 //     return function(){
@@ -13,6 +12,51 @@
 // console.log('counter(x) :>> ', counter());
 // console.log('counter(x) :>> ', counter());
 // console.log('counter(x) :>> ', counter());
+
+// let x = 10;
+
+// function foo() {
+//   let y = 20; 
+//   function bar() {
+//     let z = 15; 
+//     console.log( x + y + z);
+//   }
+//   return bar;
+// }
+
+// let test = foo();
+
+// test(); // 45
+// const counter = (function() {
+//   let privateCounter = 0;
+//   function changeBy(val) {
+//     privateCounter += val;
+//   }
+
+//   return {
+//     increment: function() {
+//       changeBy(1);
+//     },
+
+//     decrement: function() {
+//       changeBy(-1);
+//     },
+
+//     value: function() {
+//       return privateCounter;
+//     }
+//   };
+// })();
+
+// console.log(counter.value());  // 0.
+
+// counter.increment();
+// counter.increment();
+// console.log(counter.value());  // 2.
+
+// counter.decrement();
+// console.log(counter.value());  // 1.
+
 //! this
 
 // const obj1 = {
@@ -97,17 +141,16 @@
 // const tenPercentDiscount = discount(0.1);
 // console.log('tenPercentDiscount(500) :>> ', tenPercentDiscount(500));
 
-//!  not pure 
+//!  pure 
 //!Any operation that is not directly related to the final output of the function is called a Side Effect
 // let x = 2;
-// const add = (y) => {
+// const add = (x+y) => {
 //     // let x = 2;
 //  return x = x+y;
 // };
 
-// console.log('object :>> ', add(4));
-// console.log('object :>> ', add(4));
-// console.log('object :>> ', add(6));
+// console.log('object :>> ', add(4,2));
+
 
 
 //! fn.bind(this,args);
