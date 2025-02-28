@@ -1,66 +1,44 @@
-// POST 
-// const postToAdd = [{
-//         id: '22',
-//         author: 'Pupkin',
-//         content: 'Vasul Pupkin',
-//     },
-//     {
-//         id: '23',
-//         author: 'Petro',
-//         content: 'Petro Pet',
-//       }
+// Create a matchesAll function that:
 
-// ];
+// Takes any number of condition functions.
+// Returns a callback, intended for use as a callback in array filter() method.
+// Said callback should run all condition functions with all params it receives from the filter.
+//  If all callbacks return truthy values, it should return true, otherwise false.
 
-// fetch('https://jsonplaceholder.typicode.com/posts', {
-//         method: 'POST',
-//         body: JSON.stringify(postToAdd),
-//         headers: {
-//             'Content-Type': 'application/json; charset=UTF-8',
-//         },
-//     })
-//     .then(response => response.json())
-//     .then(post => console.log('post POST',post))
-//     .catch(error => console.log(error));
+const numbers = [42, -19, 5, 0, 24, 99, -23, 0, 55];
 
-//     // GET 
-const postId = 2;
-// fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
-//   .then(response => response.json())
-//   .then(post => console.log('postId GET',post))
-//   .catch(error => console.log(new Error(error)));
+const matchesAll = (...arg)=>{
+return function(...el){
+    console.log('el',el)
+    console.log('asda',...arg)
+    return arg.every()
 
-//   PATCH
-// const postToUpdate = {
-//     body: 'It is updated post',
-//     content: 'It is updated post',
-//     title: "Hello",
-//     type: "beer"
-// };
+}
 
-// fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
-//   method: 'PATCH',
-//   body: JSON.stringify(postToUpdate),
-//   headers: {
-//     'Content-Type': 'application/json; charset=UTF-8',
-//   },
-// })
-//   .then(response => response.json())
-//   .then(post => console.log('postId PATCH',post))
-//   .catch(error => console.log('ERROR' + error));
+}
 
-//   DELETE
-// const postIdDelete = 2;
-// fetch(`https://jsonplaceholder.typicode.com/posts/${postIdDelete}`, {
-//   method: 'DELETE',
-// })
-//   .then(() => console.log('postId DELETE','success'))
-//   .catch(error => console.log('ERROR' + error));
+numbers.filter(
+  matchesAll(x => x > 0),
+); // [42, 5, 24, 99, 55];
 
-// document.cookie = "user_name=Vasa Pupkin";  
-// document.cookie = "user_age=25;secure";
+numbers.filter(
+  matchesAll(x => x % 2 === 0),
+); // [42, 0, 24, 0];
 
-// // Read (All)
-// console.log( document.cookie );
-// sessionStorage.setItem('key', Date());
-// localStorage.setItem('localStorage', Date());
+numbers.filter(
+  matchesAll(
+    x => x > 0,
+    x => x % 2 === 1,
+  ),
+); // [5, 99, 55];
+
+numbers.filter(
+  matchesAll(),
+); // [42, -19, 5, 0, 24, 99, -23, 0, 55];
+
+numbers.filter(
+  matchesAll(
+    (x, i, arr) => x > i + arr.length,
+  ),
+); // [45, 24, 99, 55];
+// console.log('asda')
