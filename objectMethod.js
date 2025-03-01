@@ -1,5 +1,5 @@
 //! IF key not integer we get key the order of creation,|
-//! IF integer we get  the order of integer
+//! IF integer we get  the order of integers
 // let obj = {
 //     // a : 1,
 //     // c : 3,
