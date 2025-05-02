@@ -1,3 +1,34 @@
+// function loadJson(url) {
+//   return fetch(url).then((response) => {
+//     if (response.status == 200) {
+//       // console.log(response.json());
+//       return response.json();
+//     } else {
+//       throw new Error(response.status);
+//     }
+//   });
+// }
+
+async function loadJson(url) {
+  const res = await fetch(url);
+  if ((res.status = 200)) {
+    return res.json();
+  }
+  // return fetch(url).then((response) => {
+  //   if (response.status == 200) {
+  //     // console.log(response.json());
+  //     return response.json();
+  //   } else {
+  //     throw new Error(response.status);
+  //   }
+  // });
+}
+
+loadJson("https://jsonplaceholder.typicode.com/posts").then((dat) =>
+  console.log("dat :>> ", dat)
+);
+// .catch(alert);
+
 //! Macro Tasks
 //!? macrotasks: setTimeout, setInterval, setImmediate, requestAnimationFrame, I/O, UI rendering
 //? microtasks: process.nextTick, Promises, queueMicrotask, MutationObserver
@@ -160,10 +191,10 @@
 
 // !ssdfssssssssssssssssssssssssssssssssss
 
-console.log("promisejs", "1");
-setTimeout(function () {
-  console.log("promisejs 2", 2);
-}, 1000);
+// console.log("promisejs", "1");
+// setTimeout(function () {
+//   console.log("promisejs 2", 2);
+// }, 1000);
 
 // setTimeout(function () {
 //   return new Promise((resolve) => {
@@ -179,7 +210,7 @@ setTimeout(function () {
 
 // const a = () => {
 //   return new Promise((resolve, reject) =>
-    // setTimeout(() => resolve("promisejst, 5"), 1000)
+// setTimeout(() => resolve("promisejst, 5"), 1000)
 //     resolve("promisejst, 5")
 //   );
 // };
@@ -224,7 +255,7 @@ setTimeout(function () {
 //     .catch(function () {})
 //     .finally(function ())
 
-// try {
+// i {
 //     new Promise(function (resolve, reject) {
 //       // console.log('Promise');
 //       resolve("text");
